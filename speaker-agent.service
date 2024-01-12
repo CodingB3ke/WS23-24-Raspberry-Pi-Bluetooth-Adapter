@@ -1,0 +1,9 @@
+[Unit]
+Description=Bluetooth speaker agent
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /home/piProject/speaker-agent.py
+
+[Install]
+WantedBy=default.target
