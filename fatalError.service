@@ -1,0 +1,8 @@
+[Unit]
+Description= Service to check if speaker agent service failed
+
+[Service]
+ExecStart=/usr/bin/python3 /home/piProject/fatalError-speaker-agent.py
+
+[Install]
+WantedBy=default.target
