@@ -52,15 +52,15 @@ This will create a service that checks if the speaker-agent.service started corr
 8. sudo systemctl start fatalError.service
 
 Troubleshooting:
-- I see the raspberry pi in the device list, but pairing doesn't work.
+I see the raspberry pi in the device list, but pairing doesn't work.
   Check with "journalctl -xe -u speaker-agent.service" if your device was connected and if maybe services have been denied. Try again.
 
-- The music is playing from my own device not from the speaker.
+The music is playing from my own device not from the speaker.
   Try to change the replay device in your music app. Sometimes (especially the first time) it takes a while until your device recognizes the raspberry pi as a replay device. Try disconnecting and connecting again.
   Check with "busctl tree org.bluez" (in raspberry terminal) if your device's MAC address is listed in the tree.
   Check with "journalctl -xe -u speaker-agent.service" if your device is connected.
 
-- There is a constant buzzing coming from my speaker.
+There is a constant buzzing coming from my speaker.
   Easy and cheap way: Try adjusting the 3.5mm AUX by pulling it out a little bit. Play around and see if it fixes the problem.
   Else: Open the config.txt on the Raspberry Pi and change the line hdmi_force_hotplug to 1 or uncomment it if it has a # in front of it
   Else: Buy a ground loop isolator. Around 12€ on Amazon
